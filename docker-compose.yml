@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   mongo:
     image: mongo:7
@@ -11,39 +9,40 @@ services:
       - mongo_data:/data/db
     environment:
       MONGO_INITDB_DATABASE: opay_db
+    networks:
+      - opay_network
 
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
     container_name: opay_backend
     restart: unless-stopped
     ports:
       - '8080:8080'
     depends_on:
       - mongo
-    environment:
-      PORT: 8080
-      MONGO_URI: mongodb://mongo:27017
-      MONGO_DB: opay_db
-      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:-change_me_access_secret_32chars}
-      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change_me_refresh_secret_32chars}
-      JWT_ACCESS_EXPIRY: 15m
-      JWT_REFRESH_EXPIRY: 168h
-      FRONTEND_URL: http://localhost:5173
-      BCRYPT_COST: '12'
-      ENVIRONMENT: production
+    env_file:
+      - ./.env
+    networks:
+      - opay_network
+    # Wait-for-Mongo script (ensures DB is ready before starting backend)
+    entrypoint: ["./wait-for-it.sh", "mongo:27017", "--", "./server"]
 
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
     container_name: opay_frontend
     restart: unless-stopped
     ports:
       - '5173:80'
     depends_on:
       - backend
+    networks:
+      - opay_network
 
 volumes:
   mongo_data:
+
+networks:
+  opay_network:
+    driver: bridge

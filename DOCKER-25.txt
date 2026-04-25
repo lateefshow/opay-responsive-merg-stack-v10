@@ -1,0 +1,294 @@
+PS C:\Users\HP\Desktop\A_MARCH-2026\LATEEFSHOW-CLONE-REPO\opay-responsive-merg-stack-v10> docker-compose build --no-cache       
+[+] build 0/2
+ - Image opay-responsive-merg-stack-v10-frontend Building   0.7s - Image opay-responsive-merg-stack-v10-backend  Building   0.7s#1 [internal] load local bake definitions
+#1 reading from stdin 1.02kB
+#1 reading from stdin 1.37kB 1.3s done
+#1 DONE 1.7s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 DONE 0.3s
+
+#3 [backend internal] load build definition from Dockerfile     
+#3 DONE 0.3s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 459B 0.7s done
+#2 DONE 1.6s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 642B 0.7s done
+#3 DONE 1.8s
+
+#4 [frontend internal] load metadata for docker.io/library/nginx:alpine
+#4 ...
+
+#5 [auth] library/node:pull token for registry-1.docker.io      
+#5 DONE 0.0s
+
+#6 [auth] library/nginx:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#7 [auth] library/alpine:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#8 [auth] library/golang:pull token for registry-1.docker.io
+#8 DONE 0.0s
+
+#9 [backend internal] load metadata for docker.io/library/golang:1.23-alpine
+#9 ...
+
+#4 [frontend internal] load metadata for docker.io/library/nginx:alpine
+#4 DONE 7.2s
+
+#10 [backend internal] load metadata for docker.io/library/alpine:3.18
+#10 DONE 7.3s
+
+#11 [frontend internal] load metadata for docker.io/library/node:20-alpine
+#11 DONE 7.3s
+
+#9 [backend internal] load metadata for docker.io/library/golang:1.23-alpine
+#9 DONE 7.4s
+
+#12 [frontend internal] load .dockerignore
+#12 transferring context: 2B 0.4s done
+#12 DONE 0.7s
+
+#13 [backend internal] load .dockerignore
+#13 transferring context: 2B 0.3s done
+#13 DONE 0.8s
+
+#14 [backend internal] load build context
+#14 DONE 0.0s
+
+#15 [frontend internal] load build context
+#15 ...
+
+#16 [backend builder 1/7] FROM docker.io/library/golang:1.23-alpine@sha256:383395b794dffa5b53012a212365d40c8e37109a626ca30d6151c8348d380b5f
+#16 resolve docker.io/library/golang:1.23-alpine@sha256:383395b794dffa5b53012a212365d40c8e37109a626ca30d6151c8348d380b5f 1.2s done
+#16 DONE 1.3s
+
+#17 [frontend stage-1 1/3] FROM docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0
+#17 resolve docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0 1.3s done    
+#17 DONE 1.5s
+
+#17 [frontend stage-1 1/3] FROM docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0
+#17 CACHED
+
+#14 [backend internal] load build context
+#14 ...
+
+#18 [backend builder 2/7] WORKDIR /app
+#18 CACHED
+
+#14 [backend internal] load build context
+#14 transferring context: 4.48kB 0.9s done
+#14 DONE 1.2s
+
+#19 [backend stage-1 1/4] FROM docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f
+#19 resolve docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f 1.3s done     
+#19 DONE 1.5s
+
+#20 [backend stage-1 2/4] WORKDIR /app
+#20 CACHED
+
+#21 [frontend build 1/6] FROM docker.io/library/node:20-alpine@sha256:b88333c42c23fbd91596ebd7fd10de239cedab9617de04142dde7315e3bc0afa
+#21 resolve docker.io/library/node:20-alpine@sha256:b88333c42c23fbd91596ebd7fd10de239cedab9617de04142dde7315e3bc0afa 1.2s done  
+#21 DONE 1.5s
+
+#22 [frontend build 2/6] WORKDIR /app
+#22 CACHED
+
+#15 [frontend internal] load build context
+#15 transferring context: 8.65kB 1.5s done
+#15 DONE 2.0s
+
+#23 [backend builder 3/7] RUN apk add --no-cache git
+#23 ...
+
+#24 [frontend build 3/6] COPY package.json package-lock.json ./
+#24 DONE 1.9s
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile
+#25 ...
+
+#23 [backend builder 3/7] RUN apk add --no-cache git
+#23 22.34 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+#23 28.01 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+#23 36.83 (1/12) Installing brotli-libs (1.1.0-r2)
+#23 37.87 (2/12) Installing c-ares (1.34.6-r0)
+#23 38.87 (3/12) Installing libunistring (1.3-r0)
+#23 39.66 (4/12) Installing libidn2 (2.3.7-r0)
+#23 40.06 (5/12) Installing nghttp2-libs (1.65.0-r0)
+#23 40.69 (6/12) Installing libpsl (0.21.5-r3)
+#23 40.98 (7/12) Installing zstd-libs (1.5.7-r0)
+#23 43.03 (8/12) Installing libcurl (8.14.1-r2)
+#23 43.67 (9/12) Installing libexpat (2.7.5-r0)
+#23 43.96 (10/12) Installing pcre2 (10.46-r0)
+#23 44.81 (11/12) Installing git (2.49.1-r0)
+#23 52.33 (12/12) Installing git-init-template (2.49.1-r0)
+#23 53.01 Executing busybox-1.37.0-r18.trigger
+#23 56.35 OK: 20 MiB in 29 packages
+#23 DONE 58.6s
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile
+#25 ...
+
+#26 [backend builder 4/7] COPY go.mod go.sum ./
+#26 DONE 6.0s
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile
+#25 ...
+
+#27 [backend builder 5/7] RUN go mod download
+#27 DONE 188.4s
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile      
+#25 ...
+
+#28 [backend builder 6/7] COPY . .
+#28 DONE 9.3s
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile      
+#25 ...
+
+#29 [backend builder 7/7] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o server .
+#29 ...
+
+#25 [frontend build 4/6] RUN npm install --frozen-lockfile      
+#25 270.7
+#25 270.7 added 244 packages, and audited 245 packages in 4m    
+#25 270.7
+#25 270.7 36 packages are looking for funding
+#25 270.7   run `npm fund` for details
+#25 270.7 
+#25 270.7 2 moderate severity vulnerabilities
+#25 270.7
+#25 270.7 To address all issues (including breaking changes), run:
+#25 270.7   npm audit fix --force
+#25 270.7
+#25 270.7 Run `npm audit` for details.
+#25 270.8 npm notice
+#25 270.8 npm notice New major version of npm available! 10.8.2 
+-> 11.12.0
+#25 270.8 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.0
+#25 270.8 npm notice To update run: npm install -g npm@11.12.0  
+#25 270.8 npm notice
+#25 DONE 274.6s
+
+#29 [backend builder 7/7] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o server .
+#29 ...
+
+#30 [frontend build 5/6] COPY . .
+#30 DONE 4.7s
+
+#29 [backend builder 7/7] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o server .
+#29 ...
+
+#31 [frontend build 6/6] RUN npm run build
+#31 3.752 
+#31 3.752 > opay-frontend-v4@4.0.0 build
+#31 3.752 > tsc && vite build
+#31 3.752
+#31 ...
+
+#29 [backend builder 7/7] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o server .
+#29 DONE 817.9s
+
+#31 [frontend build 6/6] RUN npm run build
+#31 ...
+
+#32 [backend stage-1 3/4] COPY --from=builder /app/server .
+#32 DONE 14.4s
+
+#31 [frontend build 6/6] RUN npm run build
+#31 ...
+
+#33 [backend stage-1 4/4] COPY --from=builder /app/.env .
+#33 DONE 2.4s
+
+#31 [frontend build 6/6] RUN npm run build
+#31 ...
+
+#34 [backend] exporting to image
+#34 exporting layers
+#34 exporting layers 23.0s done
+#34 exporting manifest sha256:a32a1a1d424a3bee62e32689efb0c7005376f09a87081a972b374bf3849e184c
+#34 exporting manifest sha256:a32a1a1d424a3bee62e32689efb0c7005376f09a87081a972b374bf3849e184c 1.8s done
+#34 exporting config sha256:12289235bbfa0d9a73eeea76543e614268c1e3574ca37925fe3fafe7c3c4019e
+#34 exporting config sha256:12289235bbfa0d9a73eeea76543e614268c1e3574ca37925fe3fafe7c3c4019e 0.9s done
+#34 exporting attestation manifest sha256:4b1b684763c8c83b331180fed6fb94b57701cd943d786447e05b294a16c6a362
+#34 exporting attestation manifest sha256:4b1b684763c8c83b331180fed6fb94b57701cd943d786447e05b294a16c6a362 2.3s done
+#34 exporting manifest list sha256:61425dbe368bce6d499dd81f5735970456ae8a30955da9d9972c038baaa2a806
+#34 exporting manifest list sha256:61425dbe368bce6d499dd81f5735970456ae8a30955da9d9972c038baaa2a806 0.6s done
+#34 naming to docker.io/library/opay-responsive-merg-stack-v10-backend:latest
+#34 naming to docker.io/library/opay-responsive-merg-stack-v10-backend:latest 0.1s done
+#34 unpacking to docker.io/library/opay-responsive-merg-stack-v10-backend:latest
+#34 unpacking to docker.io/library/opay-responsive-merg-stack-v10-backend:latest 16.6s done
+#34 DONE 51.4s
+
+#31 [frontend build 6/6] RUN npm run build
+#31 ...
+
+#35 [backend] resolving provenance for metadata file
+#35 DONE 8.9s
+
+#31 [frontend build 6/6] RUN npm run build
+#31 943.4 src/components/cards/VirtualCardPreview.tsx(1,15): error TS2614: Module '"@/pages/Cards"' has no exported member 'CardPublic'. Did you mean to use 'import CardPublic from "@/pages/Cards"' instead?
+#31 943.4 src/components/modals/TransactionDetailModal.tsx(35,18): error TS7053: Element implicitly has an 'any' type because expression of type 'TransactionStatus' can't be used to index type '{ success: { icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; color: string; bg: string; }; pending: { ...; }; failed: { ...; }; reversed: { ...; }; 
+}'.
+#31 943.4   Property 'processing' does not exist on type '{ success: { icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> 
+& RefAttributes<SVGSVGElement>>; color: string; bg: string; }; pending: { ...; }; failed: { ...; }; reversed: { ...; }; }'.     
+#31 943.4 src/pages/Notifications.tsx(13,7): error TS2739: Type 
+'{ transaction: { bg: string; color: string; label: string; }; security: { bg: string; color: string; label: string; }; promo: { bg: string; color: string; label: string; }; system: { bg: string; color: string; label: string; }; loan: { ...; }; investment: { ...; }; }' is missing the following properties from type 'Record<NotificationCategory, { bg: string; color: string; label: string; }>': insurance, cashback
+#31 943.4 src/pages/Rewards.tsx(45,38): error TS2550: Property 'findLast' does not exist on type '{ level: string; min: number; 
+max: number; color: string; bg: string; border: string; perks: string[]; }[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2023' or later.
+#31 943.4 src/pages/Rewards.tsx(45,47): error TS7006: Parameter 
+'l' implicitly has an 'any' type.
+#31 943.4 src/pages/Rewards.tsx(114,39): error TS7006: Parameter 'p' implicitly has an 'any' type.
+#31 943.4 src/pages/escrow/Escrow.tsx(211,102): error TS2322: Type '{ children: Element; isOpen: boolean; onClose: () => void; title: string; size: string; }' is not assignable to type 'IntrinsicAttributes & ModalProps'.
+#31 943.4   Property 'size' does not exist on type 'IntrinsicAttributes & ModalProps'.
+#31 943.4 src/pages/netWorth/NetWorth.tsx(33,30): error TS2339: 
+Property 'breakdown' does not exist on type 'NetWorthSnapshot'. 
+#31 943.4 src/pages/netWorth/NetWorth.tsx(55,67): error TS2339: 
+Property 'createdAt' does not exist on type 'NetWorthSnapshot'. 
+#31 943.4 src/pages/netWorth/NetWorth.tsx(55,106): error TS2339: Property 'netWorth' does not exist on type 'NetWorthSnapshot'. 
+#31 943.4 src/pages/p2p/P2PTransfer.tsx(266,38): error TS2488: Type '"" | string[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.
+#31 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+------
+ > [frontend build 6/6] RUN npm run build:
+943.4 src/pages/Notifications.tsx(13,7): error TS2739: Type '{ transaction: { bg: string; color: string; label: string; }; security: { bg: string; color: string; label: string; }; promo: { bg: string; color: string; label: string; }; system: { bg: string; 
+color: string; label: string; }; loan: { ...; }; investment: { ...; }; }' is missing the following properties from type 'Record<NotificationCategory, { bg: string; color: string; label: string; }>': insurance, cashback
+943.4 src/pages/Rewards.tsx(45,38): error TS2550: Property 'findLast' does not exist on type '{ level: string; min: number; max: number; color: string; bg: string; border: string; perks: string[]; }[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2023' or later.
+943.4 src/pages/Rewards.tsx(45,47): error TS7006: Parameter 'l' 
+implicitly has an 'any' type.
+943.4 src/pages/Rewards.tsx(114,39): error TS7006: Parameter 'p' implicitly has an 'any' type.
+943.4 src/pages/escrow/Escrow.tsx(211,102): error TS2322: Type '{ children: Element; isOpen: boolean; onClose: () => void; title: string; size: string; }' is not assignable to type 'IntrinsicAttributes & ModalProps'.
+943.4   Property 'size' does not exist on type 'IntrinsicAttributes & ModalProps'.
+943.4 src/pages/netWorth/NetWorth.tsx(33,30): error TS2339: Property 'breakdown' does not exist on type 'NetWorthSnapshot'.     
+943.4 src/pages/netWorth/NetWorth.tsx(55,67): error TS2339: Property 'createdAt' does not exist on type 'NetWorthSnapshot'.     
+943.4 src/pages/netWorth/NetWorth.tsx(55,106): error TS2339: Property 'netWorth' does not exist on type 'NetWorthSnapshot'.     
+943.4 src/pages/p2p/P2PTransfer.tsx(266,38): error TS2488: Type 
+[+] build 0/2] | undefined' must have a '[Symbol.iterator]()' me - Image opay-responsive-merg-stack-v10-fron... Building 1322.5s - Image opay-responsive-merg-stack-v10-backend Building 1322.5sDockerfile:10
+
+--------------------
+
+   8 |
+
+   9 |     COPY . .
+
+  10 | >>> RUN npm run build
+
+  11 |
+
+  12 |     # Production stage
+
+--------------------
+
+target frontend: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+
+
+
+View build details: docker-desktop://dashboard/build/default/default/e4m1voyatzeqexrpnjkydkiij
+
+PS C:\Users\HP\Desktop\A_MARCH-2026\LATEEFSHOW-CLONE-REPO\opay-responsive-merg-stack-v10>

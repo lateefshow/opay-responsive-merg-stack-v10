@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2023", // Updated from ES2020
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"], // Updated lib to include ES2023
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
